@@ -42,8 +42,8 @@ export function HeroSection({
   const parts = accent ? title.split(accent) : [title]
   const sectionClass = 'relative overflow-hidden border-b border-brown-dark/10'
   const contentPadClass = centered
-    ? 'relative mx-auto max-w-7xl px-6 pb-24 pt-28 md:px-10 lg:px-16 lg:pb-28 lg:pt-32'
-    : 'relative mx-auto max-w-7xl px-6 pb-20 pt-20 md:px-10 lg:px-16 lg:pb-24 lg:pt-24'
+    ? 'relative mx-auto max-w-7xl px-6 pb-32 pt-32 md:px-10 lg:px-16 lg:pb-40 lg:pt-40'
+    : 'relative mx-auto max-w-7xl px-6 pb-28 pt-24 md:px-10 lg:px-16 lg:pb-36 lg:pt-32'
   const finalContentClass = `${contentPadClass} ${contentClassName}`.trim()
 
   return (
@@ -94,7 +94,7 @@ export function HeroSection({
           ) : null}
         </Reveal>
       </div>
-      <div className="absolute -bottom-10 left-0 h-24 w-full rounded-[100%] bg-cream" />
+      <div className="hero-swoop" />
     </section>
   )
 }

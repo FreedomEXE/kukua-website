@@ -77,6 +77,18 @@ p {
     0 14px 24px rgba(31, 98, 63, 0.12);
 }
 
+.hero-swoop {
+  position: absolute;
+  bottom: -4rem;
+  left: 50%;
+  width: 140vw;
+  height: 8rem;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: var(--color-cream);
+  pointer-events: none;
+}
+
 .bg-thread {
   background-image:
     linear-gradient(rgba(44, 41, 39, 0.04) 1px, transparent 1px),

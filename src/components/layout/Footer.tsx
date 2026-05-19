@@ -39,7 +39,7 @@ export function Footer() {
           <p className="max-w-sm text-sm text-white/78">
             Empowering communities with resources, respect, and resilience for a brighter future.
           </p>
-          <a href={instagramHref} className="inline-flex items-center gap-2 text-sm text-white/85 hover:text-white">
+          <a href={instagramHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white/85 hover:text-white">
             <Instagram className="h-4 w-4" />
             Instagram
           </a>

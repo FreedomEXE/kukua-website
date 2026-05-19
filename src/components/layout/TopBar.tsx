@@ -33,7 +33,7 @@ export function TopBar() {
             {topBarItems[1].value}
           </a>
         </div>
-        <a href={instagramHref} className="inline-flex items-center gap-2 hover:text-white/80">
+        <a href={instagramHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white/80">
           <Instagram className="h-3.5 w-3.5" />
           Instagram
         </a>

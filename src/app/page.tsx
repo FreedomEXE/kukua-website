@@ -40,7 +40,7 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(164,213,205,0.78)_0%,rgba(164,213,205,0.67)_44%,rgba(24,30,28,0.54)_100%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-16 md:px-10 lg:px-16 lg:pb-28 lg:pt-24">
+        <div className="relative mx-auto max-w-7xl px-6 pb-28 pt-20 md:px-10 lg:px-16 lg:pb-40 lg:pt-32">
           <div className="max-w-4xl space-y-6">
             <h1 className="font-serif text-[35px] leading-[1.08] text-white md:text-[60px] lg:text-[60px]">
               {titleParts[0]}
@@ -53,7 +53,7 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-        <div className="absolute -bottom-10 left-0 h-24 w-full rounded-[100%] bg-cream" />
+        <div className="hero-swoop" />
       </section>
       <section className="section-pad px-6 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">

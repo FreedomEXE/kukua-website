@@ -50,12 +50,14 @@ export function Header() {
                   {item.children?.length ? <ChevronDown className="h-4 w-4" /> : null}
                 </Link>
                 {item.children?.length ? (
-                  <div className="invisible absolute left-0 top-full mt-3 min-w-[260px] translate-y-2 border border-brown-dark/10 bg-white p-3 opacity-0 shadow-soft transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                    {item.children.map((child) => (
-                      <Link key={child.href} href={child.href} className="block px-3 py-2 text-sm text-brown hover:bg-cream hover:text-brown-dark">
-                        {child.label}
-                      </Link>
-                    ))}
+                  <div className="invisible absolute left-0 top-full z-50 min-w-[260px] pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100">
+                    <div className="border border-brown-dark/10 bg-white p-3 shadow-soft">
+                      {item.children.map((child) => (
+                        <Link key={child.href} href={child.href} className="block px-3 py-2 text-sm text-brown hover:bg-cream hover:text-brown-dark">
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 ) : null}
               </div>
