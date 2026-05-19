@@ -72,20 +72,20 @@ p {
 }
 
 .paper-bg {
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.96);
   background-image:
-    radial-gradient(circle at 20% 10%, rgba(31, 98, 63, 0.035), transparent 28%),
-    radial-gradient(circle at 80% 40%, rgba(31, 98, 63, 0.025), transparent 30%),
-    linear-gradient(135deg, rgba(31, 98, 63, 0.025) 0 2px, transparent 2px 12px);
+    radial-gradient(circle at 20% 10%, rgba(31, 98, 63, 0.028), transparent 28%),
+    radial-gradient(circle at 80% 40%, rgba(31, 98, 63, 0.022), transparent 30%),
+    linear-gradient(135deg, rgba(31, 98, 63, 0.02) 0 2px, transparent 2px 12px);
 }
 
 .floor-plan-parallax {
-  min-height: 520px;
+  min-height: 600px;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.9)),
-    url('/images/pages/floorplan-1.jpg');
+    linear-gradient(rgba(26, 25, 24, 0.02), rgba(26, 25, 24, 0.02)),
+    url('/images/pages/floorplan-original.png');
   background-position: center;
-  background-size: min(980px, 92vw) auto;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -94,7 +94,7 @@ p {
   .floor-plan-parallax {
     min-height: 320px;
     background-attachment: scroll;
-    background-size: 720px auto;
+    background-size: auto 100%;
   }
 }
 
@@ -114,6 +114,82 @@ p {
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   background: var(--color-cream);
   pointer-events: none;
+}
+
+.decor-x {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+
+.decor-x::before,
+.decor-x::after {
+  position: absolute;
+  left: 10px;
+  top: 1px;
+  width: 5px;
+  height: 22px;
+  border-radius: 999px;
+  background: #8ab7ac;
+  content: '';
+}
+
+.decor-x::after {
+  transform: rotate(90deg);
+}
+
+.decor-dot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--color-gold);
+  box-shadow: -9px 9px 0 rgba(33, 83, 49, 0.1);
+  pointer-events: none;
+}
+
+.decor-squiggle {
+  position: absolute;
+  width: 78px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.decor-squiggle::before {
+  display: block;
+  color: #91ab67;
+  content: '~~~~~';
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1;
+  transform: rotate(12deg);
+}
+
+.story-x {
+  left: min(8vw, 120px);
+  top: 62%;
+}
+
+.story-dot {
+  right: min(16vw, 250px);
+  top: 58%;
+}
+
+.faq-x {
+  left: min(22vw, 350px);
+  top: 18%;
+}
+
+.faq-squiggle {
+  right: min(14vw, 210px);
+  bottom: 12%;
+}
+
+.story-future-card {
+  min-height: 255px;
 }
 
 .bg-thread {

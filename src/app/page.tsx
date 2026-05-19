@@ -20,13 +20,15 @@ import { Button } from '@/components/ui/Button'
 import { ChecklistItem } from '@/components/ui/ChecklistItem'
 import { ContactCard } from '@/components/ui/ContactCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { TimelineItem } from '@/components/ui/TimelineItem'
 import { buildingDonations } from '@/data/donations'
 import { faqItems } from '@/data/faq'
 import { homePage } from '@/data/content'
 import { createMetadata } from '@/lib/metadata'
+import { Globe2, HandHeart, Handshake, Sprout } from 'lucide-react'
 
 export const metadata = createMetadata('Home', homePage.hero.description)
+
+const storyTimelineIcons = [Sprout, Handshake, HandHeart, Globe2]
 
 export default function HomePage() {
   const titleParts = homePage.hero.title.split(homePage.hero.accent)
@@ -108,28 +110,46 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-      <StatsSection items={homePage.stats.items} quote={homePage.stats.quote} variant="cards" />
-      <section className="relative bg-[#e8eee4] px-6 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+      <StatsSection items={homePage.stats.items} variant="cards" />
+      <section className="relative bg-[#e8eee4] px-6 py-16 md:px-10 lg:px-16 lg:py-20">
+        <span className="decor-x story-x hidden lg:block" aria-hidden="true" />
+        <span className="decor-dot story-dot hidden lg:block" aria-hidden="true" />
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.96fr_1.04fr]">
           <Reveal className="relative" from="left">
-            <img src="/images/pages/img-1235.jpg" alt="Kukua impact story" className="shadow-outline h-[430px] w-full rounded-[24px] object-cover" />
-            <div className="absolute left-8 top-8 max-w-[430px] bg-gold/88 p-8 text-white shadow-soft">
-              <p className="font-serif text-xl text-white">{homePage.stats.quote}</p>
+            <img src="/images/pages/story-water-well.jpg" alt="Community water well supported by Kukua" className="h-[390px] w-full rounded-b-[28px] object-cover shadow-outline md:h-[520px]" />
+            <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 bg-gold/78 px-8 py-8 text-white md:px-20 md:py-10">
+              <p className="font-serif text-[22px] font-bold italic leading-snug text-white md:text-[28px]">&quot;{homePage.stats.quote}&quot;</p>
             </div>
           </Reveal>
-          <Reveal className="space-y-5 self-center" from="right">
+          <Reveal className="relative space-y-5 self-center" from="right">
+            <span className="decor-x -top-12 right-24 hidden lg:block" aria-hidden="true" />
             <SectionLabel>{homePage.story.label}</SectionLabel>
             <h2 className="max-w-3xl font-serif text-[30px] leading-tight md:text-[42px]">{homePage.story.title}</h2>
             <p className="max-w-3xl text-brown/85">{homePage.story.body}</p>
             <Button href={homePage.story.action.href}>{homePage.story.action.label}</Button>
           </Reveal>
         </div>
-        <div className="mx-auto mt-12 grid max-w-7xl gap-6 lg:grid-cols-4">
-          {homePage.story.timeline.map((item, index) => (
-            <Reveal key={item.title} delay={index * 0.08} from={index % 2 === 0 ? 'left' : 'right'}>
-              <TimelineItem title={item.title} description={item.description} />
-            </Reveal>
-          ))}
+        <div className="mx-auto mt-16 grid max-w-7xl items-stretch gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-14">
+          {homePage.story.timeline.map((item, index) => {
+            const Icon = storyTimelineIcons[index] ?? Sprout
+            const isFeature = index === homePage.story.timeline.length - 1
+
+            return (
+              <Reveal key={item.title} delay={index * 0.08} from={index % 2 === 0 ? 'left' : 'right'}>
+                <article
+                  className={
+                    isFeature
+                      ? 'story-future-card flex h-full flex-col items-center justify-center rounded-[36px] bg-gold px-7 py-10 text-center text-white shadow-soft'
+                      : 'flex h-full flex-col items-center text-center'
+                  }
+                >
+                  <Icon className={`mb-5 h-12 w-12 ${isFeature ? 'text-white' : 'text-[#91ab67]'}`} strokeWidth={1.6} />
+                  <h3 className={`font-serif text-[24px] ${isFeature ? 'text-white' : 'text-[#91ab67]'}`}>{item.title}</h3>
+                  <p className={`mt-3 max-w-[270px] leading-7 ${isFeature ? 'text-white/95' : 'text-[#7f995b]'}`}>{item.description}</p>
+                </article>
+              </Reveal>
+            )
+          })}
         </div>
       </section>
       <section className="section-pad px-6 md:px-10 lg:px-16">
@@ -177,16 +197,18 @@ export default function HomePage() {
           <DonationGrid items={buildingDonations} />
         </div>
       </section>
-      <section className="paper-bg px-6 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_0.6fr_1fr]">
-          <Reveal className="space-y-5" from="left">
+      <section className="paper-bg relative overflow-hidden px-6 py-16 md:px-10 lg:px-16 lg:py-24">
+        <span className="decor-x faq-x hidden lg:block" aria-hidden="true" />
+        <span className="decor-squiggle faq-squiggle hidden lg:block" aria-hidden="true" />
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.72fr_0.72fr_0.9fr] lg:gap-0">
+          <Reveal className="relative space-y-5 lg:pr-12" from="left">
             <SectionLabel>{homePage.faq.label}</SectionLabel>
             <h2 className="font-serif text-[30px] leading-tight md:text-[42px]">{homePage.faq.title}</h2>
           </Reveal>
-          <Reveal delay={0.05}>
-            <img src="/images/pages/children-2.jpg" alt="Kukua volunteers with children" className="h-[430px] w-full object-cover shadow-outline" />
+          <Reveal delay={0.05} className="relative z-0">
+            <img src="/images/pages/faq-original.jpg" alt="Kukua volunteers with children" className="h-[390px] w-full object-cover md:h-[570px]" />
           </Reveal>
-          <Reveal delay={0.1} from="right">
+          <Reveal delay={0.1} from="right" className="relative z-10 lg:-ml-20">
             <Accordion items={faqItems.map((item) => ({ question: item.question, answer: item.answer }))} />
           </Reveal>
         </div>
