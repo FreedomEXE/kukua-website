@@ -80,23 +80,17 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-      <section className="px-6 pb-8 md:px-10 lg:px-16">
-        <div className="shadow-outline mx-auto grid max-w-7xl items-center gap-6 rounded-[20px] bg-white p-8 lg:grid-cols-[1.15fr_0.85fr]">
-          <Reveal className="space-y-4">
-            <h3 className="font-serif text-[28px] md:text-[36px]">{homePage.buildFuture.title}</h3>
-            <p className="max-w-2xl text-brown/85">{homePage.buildFuture.body}</p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <img src="/images/pages/img-0991.jpg" alt={homePage.buildFuture.title} className="shadow-outline h-56 w-full rounded-[16px] object-cover" />
-          </Reveal>
-        </div>
-      </section>
       <section className="section-pad px-6 pt-8 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="self-end" from="left">
-            <img src="/images/pages/img-130821.jpg" alt={homePage.whyThisMatters.title} className="shadow-outline h-[420px] w-full rounded-[24px] object-cover" />
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.98fr_1.02fr]">
+          <Reveal className="relative self-end" from="left">
+            <img src="/images/pages/img-0991.jpg" alt={homePage.buildFuture.title} className="shadow-outline h-[540px] w-full rounded-[24px] object-cover md:h-[640px]" />
+            <div className="absolute bottom-8 left-4 right-4 max-w-[390px] rounded-[22px] bg-gold p-6 text-white shadow-soft md:-left-10 md:bottom-14 md:right-auto md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Urgent Need</p>
+              <h3 className="mt-3 font-serif text-[28px] leading-tight text-white">{homePage.buildFuture.title}</h3>
+              <p className="mt-4 text-base leading-7 text-white/92">{homePage.buildFuture.body}</p>
+            </div>
           </Reveal>
-          <Reveal className="relative space-y-5">
+          <Reveal className="relative space-y-5 self-center" from="right">
             <span className="pointer-events-none absolute -left-7 -top-1 hidden text-[40px] font-semibold text-[#8ab7ac] md:block">+</span>
             <span className="pointer-events-none absolute right-5 top-4 hidden h-7 w-7 rounded-full bg-gold md:block" />
             <SectionLabel>{homePage.whyThisMatters.label}</SectionLabel>
@@ -115,30 +109,36 @@ export default function HomePage() {
         </div>
       </section>
       <StatsSection items={homePage.stats.items} quote={homePage.stats.quote} variant="cards" />
-      <section className="section-pad px-6 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-7xl space-y-8">
-          <Reveal className="space-y-5">
-            <SectionLabel>{homePage.story.label}</SectionLabel>
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div className="space-y-4">
-                <h2 className="max-w-3xl font-serif text-[30px] leading-tight md:text-[42px]">{homePage.story.title}</h2>
-                <p className="max-w-3xl text-brown/85">{homePage.story.body}</p>
-              </div>
-              <Button href={homePage.story.action.href}>{homePage.story.action.label}</Button>
+      <section className="relative bg-[#e8eee4] px-6 py-16 md:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+          <Reveal className="relative" from="left">
+            <img src="/images/pages/img-1235.jpg" alt="Kukua impact story" className="shadow-outline h-[430px] w-full rounded-[24px] object-cover" />
+            <div className="absolute left-8 top-8 max-w-[430px] bg-gold/88 p-8 text-white shadow-soft">
+              <p className="font-serif text-xl text-white">{homePage.stats.quote}</p>
             </div>
           </Reveal>
-          <div className="grid gap-6 lg:grid-cols-4">
-            {homePage.story.timeline.map((item) => (
-              <Reveal key={item.title}>
-                <TimelineItem title={item.title} description={item.description} />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal className="space-y-5 self-center" from="right">
+            <SectionLabel>{homePage.story.label}</SectionLabel>
+            <h2 className="max-w-3xl font-serif text-[30px] leading-tight md:text-[42px]">{homePage.story.title}</h2>
+            <p className="max-w-3xl text-brown/85">{homePage.story.body}</p>
+            <Button href={homePage.story.action.href}>{homePage.story.action.label}</Button>
+          </Reveal>
+        </div>
+        <div className="mx-auto mt-12 grid max-w-7xl gap-6 lg:grid-cols-4">
+          {homePage.story.timeline.map((item, index) => (
+            <Reveal key={item.title} delay={index * 0.08} from={index % 2 === 0 ? 'left' : 'right'}>
+              <TimelineItem title={item.title} description={item.description} />
+            </Reveal>
+          ))}
         </div>
       </section>
-      <section className="px-6 pb-16 md:px-10 lg:px-16">
-        <div className="mesh-panel shadow-outline mx-auto max-w-7xl border border-brown-dark/10 p-8 md:p-10">
-          <Reveal className="space-y-6">
+      <section className="section-pad px-6 md:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+          <Reveal from="left">
+            <img src="/images/pages/img-0997-scaled.jpg" alt={homePage.donationHelp.title} className="shadow-outline h-[520px] w-full rounded-[24px] object-cover" />
+          </Reveal>
+          <Reveal className="relative space-y-6 self-center" from="right">
+            <span className="pointer-events-none absolute right-10 top-0 hidden h-7 w-7 rounded-full bg-gold md:block" />
             <SectionLabel>{homePage.donationHelp.label}</SectionLabel>
             <h2 className="max-w-3xl font-serif text-[30px] leading-tight md:text-[42px]">{homePage.donationHelp.title}</h2>
             {homePage.donationHelp.body.map((paragraph) => (
@@ -146,7 +146,7 @@ export default function HomePage() {
                 {paragraph}
               </p>
             ))}
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2">
               {homePage.donationHelp.checklist.map((item) => (
                 <ChecklistItem key={item} text={item} />
               ))}
@@ -155,26 +155,18 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-      <section className="section-pad px-6 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-7xl space-y-6">
-          <Reveal className="space-y-5">
+      <section className="bg-[#e8eee4] px-6 py-12 text-center md:px-10 lg:px-16">
+        <Reveal className="mx-auto max-w-4xl space-y-4">
+          <div className="flex justify-center">
             <SectionLabel>{homePage.floorPlans.label}</SectionLabel>
-            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-              <div className="space-y-4">
-                <h2 className="font-serif text-[30px] leading-tight md:text-[42px]">{homePage.floorPlans.title}</h2>
-                <p className="text-brown/85">{homePage.floorPlans.body}</p>
-              </div>
-              <Button href={homePage.floorPlans.action.href}>{homePage.floorPlans.action.label}</Button>
-            </div>
-          </Reveal>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {homePage.floorPlans.images.map((image, index) => (
-              <Reveal key={image} delay={index * 0.05}>
-                <img src={image} alt={`Floor plan ${index + 1}`} className="shadow-outline h-[300px] w-full object-cover" />
-              </Reveal>
-            ))}
           </div>
-        </div>
+          <h2 className="font-serif text-[30px] leading-tight md:text-[42px]">{homePage.floorPlans.title}</h2>
+          <p className="text-brown/85">{homePage.floorPlans.body}</p>
+          <Button href={homePage.floorPlans.action.href}>{homePage.floorPlans.action.label}</Button>
+        </Reveal>
+      </section>
+      <section className="floor-plan-parallax" aria-label="Floor plan preview">
+        <div className="sr-only">{homePage.floorPlans.title}</div>
       </section>
       <section className="section-pad px-6 md:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl space-y-8">
@@ -185,13 +177,16 @@ export default function HomePage() {
           <DonationGrid items={buildingDonations} />
         </div>
       </section>
-      <section className="section-pad px-6 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="space-y-5">
+      <section className="paper-bg px-6 py-16 md:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_0.6fr_1fr]">
+          <Reveal className="space-y-5" from="left">
             <SectionLabel>{homePage.faq.label}</SectionLabel>
             <h2 className="font-serif text-[30px] leading-tight md:text-[42px]">{homePage.faq.title}</h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.05}>
+            <img src="/images/pages/children-2.jpg" alt="Kukua volunteers with children" className="h-[430px] w-full object-cover shadow-outline" />
+          </Reveal>
+          <Reveal delay={0.1} from="right">
             <Accordion items={faqItems.map((item) => ({ question: item.question, answer: item.answer }))} />
           </Reveal>
         </div>

@@ -31,8 +31,8 @@ export function ProgramCard({ item }: ProgramCardProps) {
   const Icon = iconMap[item.href as keyof typeof iconMap] ?? GraduationCap
 
   return (
-    <article className="shadow-outline flex h-full flex-col rounded-[22px] bg-[#91ab67] p-8 text-center text-white">
-      <div className="mx-auto rounded-full border border-white/30 p-3">
+    <article className="shadow-outline group flex h-full flex-col rounded-[22px] bg-[#91ab67] p-8 text-center text-white transition duration-500 hover:-translate-y-2 hover:shadow-soft">
+      <div className="mx-auto rounded-full border border-white/30 p-3 transition duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-white/15">
         <Icon className="h-6 w-6" />
       </div>
       <div className="mt-5 flex flex-1 flex-col space-y-4">
@@ -40,7 +40,7 @@ export function ProgramCard({ item }: ProgramCardProps) {
         <p className="text-sm leading-relaxed text-white/92">{item.description}</p>
         <Link
           href={item.href}
-          className="mt-auto inline-flex items-center justify-center gap-2 self-center rounded-full bg-gold px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-gold-dark"
+          className="mt-auto inline-flex items-center justify-center gap-2 self-center rounded-full bg-gold px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-gold-dark"
         >
           Know more
           <ArrowUpRight className="h-4 w-4" />

@@ -235,9 +235,9 @@ export const programsPage = {
     title: 'See the Impact of Your Support',
     body: 'Your contributions truly make a difference. From providing access to education and nourishing meals to supporting healthcare and community initiatives, your generosity transforms lives. See the impact of your support in empowering children, uplifting families, and creating opportunities for brighter futures.',
     stats: [
-      { value: 0, suffix: '+', label: 'Volunteer Hours Logged' },
-      { value: 0, suffix: '+', label: 'Meals Served' },
-      { value: 0, suffix: '+', label: 'Water Wells Installed' },
+      { value: 10000, suffix: '+', label: 'Volunteer Hours Logged' },
+      { value: 65000, suffix: '+', label: 'Meals Served' },
+      { value: 79, suffix: '+', label: 'Water Wells Installed' },
     ] satisfies StatItem[],
   },
   cta: {

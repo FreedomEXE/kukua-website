@@ -70,8 +70,8 @@ export default function ProgramsInitiativesPage() {
             <h2 className="font-serif text-[52px] leading-none">Our Urgent Needs</h2>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {programCards.map((item) => (
-              <Reveal key={item.href}>
+            {programCards.map((item, index) => (
+              <Reveal key={item.href} delay={(index % 3) * 0.08} from={index % 2 === 0 ? 'left' : 'right'}>
                 <ProgramCard item={item} />
               </Reveal>
             ))}
