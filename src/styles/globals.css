@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --color-gold: #b26841;
-  --color-gold-dark: #9e5835;
-  --color-brown-dark: #1f623f;
+  --color-gold: #a55e3b;
+  --color-gold-dark: #8f4f30;
+  --color-brown-dark: #215331;
   --color-brown: #3f5146;
   --color-cream: #f3f5f4;
   --color-white: #ffffff;

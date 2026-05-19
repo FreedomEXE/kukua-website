@@ -20,7 +20,7 @@ type ButtonProps = {
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 const baseClassName =
-  'inline-flex items-center justify-center gap-2 rounded-md border border-gold bg-gold px-4 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white transition hover:border-gold-dark hover:bg-gold-dark'
+  'inline-flex items-center justify-center gap-2 rounded-none border border-gold bg-gold px-4 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white transition hover:border-gold-dark hover:bg-gold-dark'
 
 export function Button({ children, href, className = '', type = 'button', ...props }: ButtonProps) {
   const classes = `${baseClassName} ${className}`.trim()

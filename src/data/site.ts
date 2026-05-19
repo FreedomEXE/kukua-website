@@ -14,7 +14,7 @@ import type { ContactItem, LinkItem, NavItem } from '@/lib/types'
 
 export const siteName = 'Kukua Orphanage'
 export const siteEmail = 'kukuaorg@gmail.com'
-export const instagramHref = '#'
+export const instagramHref = 'https://www.instagram.com/kukuaorg/'
 
 export const navItems: NavItem[] = [
   { label: 'Home', href: '/' },

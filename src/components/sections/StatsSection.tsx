@@ -24,12 +24,12 @@ type StatsSectionProps = {
 export function StatsSection({ items, quote, action, variant = 'dark' }: StatsSectionProps) {
   if (variant === 'cards') {
     return (
-      <section className="bg-light-gray/65 px-6 py-14 md:px-10 lg:px-16">
+      <section className="px-6 py-8 md:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl space-y-8">
-          <div className={`grid gap-6 ${items.length > 2 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+          <div className={`grid overflow-hidden rounded-xl bg-brown-dark shadow-outline ${items.length > 2 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
             {items.map((item) => (
-              <div key={`${item.label}-${item.value}`} className="surface-card shadow-outline p-6">
-                <StatCounter {...item} tone="dark" />
+              <div key={`${item.label}-${item.value}`} className="border-b border-white/10 p-6 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0">
+                <StatCounter {...item} className="[&>div]:text-3xl md:[&>div]:text-4xl [&>p]:text-[11px]" />
               </div>
             ))}
           </div>

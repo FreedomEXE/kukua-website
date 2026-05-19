@@ -20,7 +20,7 @@ type DonationCardProps = {
 
 export function DonationCard({ item }: DonationCardProps) {
   return (
-    <article className="shadow-outline overflow-hidden rounded-2xl bg-[#b66a42]">
+    <article className="shadow-outline overflow-hidden rounded-xl bg-gold">
       <div className="relative h-52 overflow-hidden">
         <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
         <span className="absolute left-4 top-4 rounded-full bg-black/30 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
@@ -42,7 +42,7 @@ export function DonationCard({ item }: DonationCardProps) {
         </div>
         <Link
           href="/donate"
-          className="inline-flex w-full items-center justify-center rounded-sm border border-white/90 bg-white px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-brown-dark transition hover:bg-cream"
+          className="inline-flex w-full items-center justify-center rounded-none border border-white/90 bg-white px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-brown-dark transition hover:bg-cream"
         >
           Donate Now
         </Link>

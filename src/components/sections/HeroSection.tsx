@@ -71,7 +71,7 @@ export function HeroSection({
               <SectionLabel>{label}</SectionLabel>
             )
           ) : null}
-          <h1 className={`font-serif text-[40px] leading-[1.2] text-white sm:text-[52px] lg:text-[60px] ${centered ? 'mx-auto max-w-5xl' : 'max-w-5xl'}`}>
+          <h1 className={`font-serif text-[35px] leading-[1.2] text-white sm:text-[52px] lg:text-[60px] ${centered ? 'mx-auto max-w-5xl' : 'max-w-5xl'}`}>
             {accent ? (
               <>
                 {parts[0]}

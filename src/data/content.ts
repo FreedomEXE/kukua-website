@@ -50,9 +50,9 @@ export const homePage = {
   },
   stats: {
     items: [
-      { value: 0, suffix: '+', label: 'Volunteer Hours' },
-      { value: 0, suffix: '+', label: 'Meals Served' },
-      { value: 0, prefix: '$', suffix: '+', label: 'Funds Directly Impacting Lives' },
+      { value: 10000, suffix: '+', label: 'Volunteer Hours' },
+      { value: 65000, suffix: '+', label: 'Meals Served' },
+      { value: 200000, prefix: '$', suffix: '+', label: 'Funds Directly Impacting Lives' },
     ] satisfies StatItem[],
     quote: 'CHARITY DOES NOT DIMINISH WEALTH. - Prophet Muhammad (PBUH)',
   },

@@ -42,7 +42,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(164,213,205,0.78)_0%,rgba(164,213,205,0.67)_44%,rgba(24,30,28,0.54)_100%)]" />
         <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-16 md:px-10 lg:px-16 lg:pb-28 lg:pt-24">
           <div className="max-w-4xl space-y-6">
-            <h1 className="font-serif text-[48px] leading-[1.08] text-white md:text-[60px] lg:text-[60px]">
+            <h1 className="font-serif text-[35px] leading-[1.08] text-white md:text-[60px] lg:text-[60px]">
               {titleParts[0]}
               <span className="text-brown-dark">{homePage.hero.accent}</span>
               {titleParts[1]}
@@ -61,7 +61,7 @@ export default function HomePage() {
             <span className="pointer-events-none absolute -left-8 -top-1 hidden text-[42px] font-semibold text-[#8ab7ac] md:block">+</span>
             <span className="pointer-events-none absolute right-8 top-6 hidden h-8 w-8 rounded-full bg-gold md:block" />
             <SectionLabel>{homePage.vision.label}</SectionLabel>
-            <h2 className="max-w-3xl font-serif text-[45px] leading-[1.05]">{homePage.vision.title}</h2>
+            <h2 className="max-w-3xl font-serif text-[30px] leading-[1.05] md:text-[45px]">{homePage.vision.title}</h2>
             <p className="text-brown/85">{homePage.vision.body}</p>
             <div className="shadow-outline grid max-w-2xl overflow-hidden rounded-[22px] md:grid-cols-[1fr_1fr]">
               <div className="bg-brown-dark p-6 text-white">
@@ -75,7 +75,7 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} from="right">
             <img src="/images/pages/img-1182.jpg" alt={homePage.vision.title} className="shadow-outline h-[600px] w-full rounded-[24px] object-cover" />
           </Reveal>
         </div>
@@ -93,14 +93,14 @@ export default function HomePage() {
       </section>
       <section className="section-pad px-6 pt-8 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="self-end">
+          <Reveal className="self-end" from="left">
             <img src="/images/pages/img-130821.jpg" alt={homePage.whyThisMatters.title} className="shadow-outline h-[420px] w-full rounded-[24px] object-cover" />
           </Reveal>
           <Reveal className="relative space-y-5">
             <span className="pointer-events-none absolute -left-7 -top-1 hidden text-[40px] font-semibold text-[#8ab7ac] md:block">+</span>
             <span className="pointer-events-none absolute right-5 top-4 hidden h-7 w-7 rounded-full bg-gold md:block" />
             <SectionLabel>{homePage.whyThisMatters.label}</SectionLabel>
-            <h2 className="max-w-3xl font-serif text-[45px] leading-[1.05]">{homePage.whyThisMatters.title}</h2>
+            <h2 className="max-w-3xl font-serif text-[30px] leading-[1.05] md:text-[45px]">{homePage.whyThisMatters.title}</h2>
             <p className="text-brown/85">{homePage.whyThisMatters.body}</p>
             <div className="space-y-4">
               {homePage.whyThisMatters.checklist.map((item) => (

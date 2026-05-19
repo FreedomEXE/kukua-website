@@ -19,15 +19,22 @@ type RevealProps = {
   children: ReactNode
   className?: string
   delay?: number
+  from?: 'up' | 'left' | 'right'
 }
 
-export function Reveal({ children, className, delay = 0 }: RevealProps) {
+const offsets = {
+  up: { opacity: 0, x: 0, y: 36 },
+  left: { opacity: 0, x: -88, y: 0 },
+  right: { opacity: 0, x: 88, y: 0 },
+}
+
+export function Reveal({ children, className, delay = 0, from = 'up' }: RevealProps) {
   return (
     <motion.div
-      initial={{ opacity: 1, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={offsets[from]}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4, ease: 'easeOut', delay }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
     >
       {children}
