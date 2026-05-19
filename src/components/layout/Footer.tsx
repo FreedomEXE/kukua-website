@@ -5,7 +5,7 @@
  * File: src/components/layout/Footer.tsx
  *
  * Description:
- * Footer with logo, quick links, contact details, and existing site copyright.
+ * Footer with logo, quick links, contact details, and site credit.
  */
 /*-----------------------------------------------
   Manifested by Freedom_EXE
@@ -46,7 +46,7 @@ export function Footer() {
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-7xl border-t border-white/20 pt-6 text-xs uppercase tracking-[0.2em] text-white/45">
-        Allright Reserved - Yellow octo llp
+        Manifested by Freedom
       </p>
     </footer>
   )

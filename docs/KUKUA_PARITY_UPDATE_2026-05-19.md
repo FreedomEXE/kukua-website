@@ -33,3 +33,14 @@
 - Continue a page-by-page pass against `kukua.ca`.
 - For each page, compare structure, imagery, colors, typography, spacing, button behavior, scroll-triggered animation, and decorative details.
 - Prioritize the WordPress/Elementor-style section assembly animations, donation-card motion, FAQ open/close behavior, and count-up stats where still missing.
+
+## Page-by-page parity workflow
+
+For each remaining page, do not submit from visual memory alone:
+
+- Capture original desktop and mobile screenshots from `kukua.ca`.
+- Capture matching local desktop and mobile screenshots.
+- Extract original section images/backgrounds from the WordPress DOM before substituting assets.
+- Compare section order, spacing, typography, colors, button behavior, decorative marks, and image crops.
+- Verify motion patterns on scroll: count-up numbers, staggered cards, puzzle/assembled blocks, text reveal, image entrance, FAQ expansion, and parallax/background movement.
+- Run `npm run build` before committing.

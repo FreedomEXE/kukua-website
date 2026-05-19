@@ -31,6 +31,11 @@ const bodyFont = Kantumruy_Pro({
 export const metadata: Metadata = {
   title: 'Kukua Orphanage',
   description: 'Kukua empowers children and communities in rural Tanzania through education, healthcare, nutrition, and clean water.',
+  icons: {
+    icon: '/images/logo/kukua-logo.png',
+    shortcut: '/images/logo/kukua-logo.png',
+    apple: '/images/logo/kukua-logo.png',
+  },
 }
 
 export default function RootLayout({
