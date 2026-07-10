@@ -571,15 +571,36 @@ export const donatePage = {
     label: 'Donations',
     title: 'Donate to Transform Lives',
   },
-  steps: {
-    label: 'Giving Made Easy',
-    title: "We've made it simple and convenient for you to support our Events & cause",
-    items: [
-      { number: '01', title: 'Make a Donation' },
-      { number: '02', title: 'Donation Options' },
-      { number: '03', title: 'Your Money Goes' },
-      { number: '04', title: 'Donation Impact' },
+  introduction: {
+    label: '100% Volunteer-Run',
+    title: 'Your contribution goes further',
+    body: 'Kukua is proudly 100% volunteer-run, with no administrative fees. To help keep it that way, we accept donations by e-Transfer, allowing as much of your contribution as possible to go directly to the people and programs we care about.',
+    action: { label: 'Donate by e-Transfer', href: '#how-to-donate' },
+  },
+  instructions: {
+    label: 'How to Donate',
+    title: 'Donate by e-Transfer',
+    body: [
+      'Donate to Kukua by e-Transfer and help us remain 100% volunteer-run and administrative-fee free. By avoiding payment-processing fees, more of your contribution can go directly toward the programs, families, and communities we support.',
+      'When sending your e-Transfer, please include a note indicating where you would like your donation directed—for example, food programs, education, medical support, Qurbani, or another Kukua initiative.',
     ],
+    assistance: {
+      title: 'Not sure where to give?',
+      body: 'Send us a message and we will be happy to direct your contribution toward an area of greatest need.',
+      action: { label: 'Contact Kukua', href: '/contact-us' },
+    },
+    why: {
+      title: 'Why e-Transfer?',
+      body: [
+        'Online payment platforms typically charge processing fees on each donation. Accepting e-Transfers helps Kukua minimize those costs and maximize the impact of every contribution.',
+        'As a volunteer-run organization, Kukua is committed to keeping its donation process simple, transparent, and efficient. Every contribution is entrusted to us to support the people and programs we serve.',
+      ],
+    },
+    address: {
+      label: 'Send your e-Transfer to',
+      value: siteEmail,
+      href: `mailto:${siteEmail}`,
+    },
   },
 }
 
