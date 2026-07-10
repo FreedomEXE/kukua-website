@@ -26,6 +26,7 @@ type MobileNavProps = {
 
 export function MobileNav({ open, onClose, items }: MobileNavProps) {
   const [expanded, setExpanded] = useState<string | null>(null)
+  const mobileItems = [...items, { label: 'Donate', href: '/donate' }]
 
   return (
     <AnimatePresence>
@@ -53,7 +54,7 @@ export function MobileNav({ open, onClose, items }: MobileNavProps) {
               </button>
             </div>
             <nav className="space-y-4">
-              {items.map((item) => (
+              {mobileItems.map((item) => (
                 <div key={item.label} className="border-b border-brown-dark/10 pb-4">
                   <div className="flex items-center justify-between gap-3">
                     <Link href={item.href} onClick={onClose} className="font-serif text-2xl text-brown-dark">
